@@ -9,7 +9,7 @@ const port = process.env.PORT || 3080
 
 app.set('view engine', 'hbs')
 
-const viewsPath = path.join(__dirname, '../src/public')
+const viewsPath = path.join(__dirname, './src/public')
 console.log(viewsPath)
 
 
