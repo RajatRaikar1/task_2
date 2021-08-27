@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Update Page</h1>
+        <form action="/update" method="POST">
+            User Id :<input type="text" value="{{update_user._id}}" name="_id"><br><br>
+            User Name :<input type="text" value="{{update_user.username}}" name="username"><br><br>
+            User Role :<input type="text" value="{{update_user.role}}" name="role"><br><br>
+            <input type="submit"><br><br>
+        </form>
+        <a href="/index"> Click Here To Go Back To Home Page</a>
+    </body>
+</html>
