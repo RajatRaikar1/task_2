@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1 style="text-align: center; background: chartreuse;">Sign up</h1>
+        </div>
+            <div style="text-align: center;" >
+            <form action="/register" method="POST">
+                <input type="text" placeholder="Enter Name" name="username" ><br><br>
+                 <input type="text" placeholder="Enter emailId" name="emailId" ><br><br>
+                <input type="password" placeholder="Enter password" name="password" required><br><br>
+                {{!-- <input type="text" placeholder="Enter phone number" name="phoneNumber" pattern="[0-9]{10}" required><br><br>
+                <input type="radio" id="M" name="Gender" value="M">
+                <label for="M">M</label>
+                <input type="radio" id="F" name="Gender" value="F">
+                <label for="F">F</label><br> <br><br> --}}
+                <input type="submit">
+            </form>
+        </div>
+    </body>
+</html>
