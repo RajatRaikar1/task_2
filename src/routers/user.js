@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const bcrypt = require('bcryptjs')
 router.use(bodyParser.urlencoded({ extended: false }));
 
-router.get('/index', async (req, res) => {
+router.get('/', async (req, res) => {
     res.render('index')
 })
 
