@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1 style="text-align: center; background: chartreuse;">Course Add</h1>
+        </div>
+            <div style="text-align: center;" >
+            <form action="/course/add" method="POST">
+                <input type="text" placeholder="Enter course name" name="courseName" required><br><br>
+                <input type="number" placeholder="Enter duration" name="duration" min = 0><br><br>
+                <input type="number" placeholder="Enter rating" name="rating" min = 0 max= 5 ><br><br>
+                <input type="submit" >
+                <br><br>
+                <a href="/"> Click Here To Go Back To Home Page</a>
+            </form>
+        </div>
+    </body>
+</html>

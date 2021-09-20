@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+     <h1>Admin HomePage</h1>
+    
+
+        Name : {{admin.username}} <br><br>
+        emailId: {{admin.emailId}}<br><br>
+        role : {{admin.role}}<br><br>
+        id:{{admin._id}}<br><br>
+         
+        <br><br>
+        <h2>All courses details</h2>
+        <a href="/allCourses"> List all Courses</a><br><br>
+
+        <h2>Adding Courses</h2>
+        <a href="/course"> Click here to Add course</a><br><br>
+
+
+        <h2>Update course datails</h2>
+        <form action="/updateCourse" method="POST">
+           Enter course Id : <input type="text" name = "id"><br><br>
+            <input type="submit">
+        </form>
+
+        <br>
+        
+        {{!-- students and teachers details --}}
+        <div style="background: darkgray;">
+        <a href="/listOfTeachers">Teacher Details</a><br>
+        <a href="/listOfStudents">Student Details</a><br><br>
+        </div>
+
+        <br>
+        <a href="/logout"> click here to logout</a>
+    </body>
+</html>

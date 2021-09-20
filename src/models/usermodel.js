@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const emailValidator = require('email-validator')
+const Course = require('../models/coursemodel')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
@@ -25,8 +26,8 @@ const userSchema = new mongoose.Schema({
 
     role: {
         type: String,
-        default: "user",
-        enum: ["teacher", "admin" , "student","user"]
+        required: true,
+        enum: ["teacher", "admin" , "student"]
     },
 
     password: {
@@ -45,16 +46,49 @@ const userSchema = new mongoose.Schema({
     tokens: [{
         token:{
         type: String,
-        required: true
+        required: false
         }
-    }]
+    }],
+    courses: [{
+        course:{
+            type: mongoose.Schema.Types.ObjectId,
+            unique: true,
+            required: false,
+            ref: 'studentcourse'
+        }
+    }],
+    xp:{
+        type:Number,
+        default:0
+    },
+    level:{
+        type:Number,
+        default:0
+    }
     })
 
 
+userSchema.methods.toJSON = function () {
+    const user = this
+    const userObject = user.toObject()
+    delete userObject.password
+    delete userObject.tokens
+    return userObject
+    }
+
+userSchema.methods.addingCourseIntoList =  function (_id,id) {
+    const student = this
+    // const student = User.findOne({id})
+    const course =  Course.findBtId({_id})
+    console.log('in addingcourse')
+    student.courses = student.courses.concat({ course })
+    student.save()
+    return course
+    }
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this
-    const token = jwt.sign({ _id: user._id.toString() }, 'managemesystem', { expiresIn: '5 days' })
+    const token = jwt.sign({ _id: user._id.toString() }, 'managemesystem', { expiresIn: '5 second' })
     user.tokens = user.tokens.concat({ token })
     await user.save()
     return token

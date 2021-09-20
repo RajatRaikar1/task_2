@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Course Id</th>
+<th>Course Name</th>
+<th>Course duration</th>
+<th>Course rating</th>
+</tr>
+</thead>
+<tbody>
+{{#each courses}}
+<tr align="center">
+    <td>{{this._id}}</td>
+<td>{{this.courseName}}</td>
+<td>{{this.duration}}</td>
+<td>{{this.rating}}</td>
+
+<td>
+ <h3>Adding questions</h3>
+        <form action="/add-question" method="POST">
+            Course Id :<input type="text" value={{this._id}} name="_id"> 
+            <textarea placeholder="Enter questions"  rows = "5" cols = "60" name = "question">
+            </textarea><br>
+            <textarea rows = "5" cols = "60" name = "answer">
+            </textarea><br>
+            
+            <input type="date" name="date">
+            <input type="submit">
+        </form> <br>
+        <h3>Adding Assignment</h3>
+        <form action="/addAssignment" method="POST">
+        Course Id :<input type="text" value={{this._id}} name="_id">
+            <textarea rows = "5" cols = "60" name = "assignment">
+            </textarea><br>
+            <input type="submit">
+        </form>
+
+<h4>Assigning Teacher</h4>        
+<form action="/addingCourseToTeacher" method="POST"> 
+Course Id :<input type="text" value={{this._id}} name="_id_course"><br>
+Enter Teacher Id :<input type="text" name="_id_teacher">
+<input type="submit"> 
+</form>
+
+
+
+<a href="/course/delete?id={{this.id}}" onclick="return confirm('Are you sure to delete this record ?');"> Delete </a>
+</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+    </body>
+</html>

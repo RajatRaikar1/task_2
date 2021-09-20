@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <table class="table table-striped">
+        <thead>
+        <tr>
+        <th>teacher Id</th>
+        <th>teacher Name</th>
+        <th>Assigned courses</th>
+        <th>Editing details</th>
+        <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each teachers}}
+            <tr align="center">
+            <td>{{this._id}}</td>
+            <td>{{this.username}}</td>
+            <td><a href="/showAssignedCourses?id={{this._id}}">list enrolled courses </a></td>
+            <td><a href="/updateDetails?id={{this._id}}">click to update Student details </a></td>
+            <td><a href="/deteteDetails?id={{this._id}}">click to delete Student details </a></td>
+            {{/each}}
+        </tbody>
+        </table>
+    </body>
+</html>

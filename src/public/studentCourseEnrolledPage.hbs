@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <h1>enrolled courses</h1>
+        {{#each courses}}
+        course id :{{this._id}} <h4> course name:{{this.courseName}}<br>progress:{{this.progress}}</h4> <br> <br><a href="/student/course-test?_id={{this._id}}">click here to take test</a><br>
+        <form action="/srudent/progressbar?_id={{this._id}}" method="POST">
+        <input type="range" name="progress" min =0 max = 5 >
+        <input type="submit">
+        </form>
+        {{/each}}
+        
+
+    </body>
+
+</html>

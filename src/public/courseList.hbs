@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 style="background:khaki; text-align: center;">COURSES</h1>
+        {{#each courses}}
+        <h2>{{this.courseName}} <a href="/student/addingCourse?courseId={{this._id}}">enroll</a></h2>
+        {{/each}}
+    </body>
+</html>

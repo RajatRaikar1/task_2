@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <table class="table table-striped">
+        <thead>
+        <tr>
+        <th>student Name</th>
+        <th>Click here to see course details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each students}}
+        <tr align="center">
+        <td>{{this.username}}</td>
+        <td><a href="/teacher/studentInEachCourse?_id={{this._id}}">click here to see courses</a></td>
+        </tr>
+        {{/each}}
+        </tbody>
+        </table>
+
+    </body>
+</html>

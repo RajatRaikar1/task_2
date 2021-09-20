@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+     <h1>{{teacher.role}} Home Page</h1>
+         Name : {{teacher.username}}<br><br>
+         emailId: {{teacher.emailId}}<br><br>
+         role : {{teacher.role}}<br><br>
+         id:{{teacher._id}}<br><br>
+
+
+         <form action="/update-student-personal" method="POST">
+         {{teacher.role}} Id :<input type="text" value={{teacher._id}} name="_id" readonly> <br><br>
+         {{teacher.role}} Name :<input type="text" value={{teacher.username}} name="username"><br><br>
+         {{teacher.role}} Email Id:<input type="text" value={{teacher.emailId}} name="emailId"><br><br>
+         Password Change <br><br>
+         Enter New Password :<input type="password" name="password" value=123456789 ><br><br>
+         <input type="submit">
+
+         </form>
+
+         <br><br>
+         <a href="/allCourses/teacher"> Assigned Courses</a><br><br>
+
+         <br>
+         <a href="/teacher/getStudents"> List Of students</a> <br><br>
+         <a href="/logout"> click here to logout</a>
+
+        
+         
+        
+    </body>
+</html>

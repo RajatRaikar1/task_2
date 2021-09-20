@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div style="text-align: center; background-color: darkgrey;" >
+        <h1>Student Home Page</h1>
+        Id:{{student._id}}<br><br>
+        Name : {{student.username}}<br><br>
+        EmailId: {{student.emailId}}<br><br>
+        Role : {{student.role}}<br><br>
+        level : {{student.level}}<br><br>
+        xp : {{student.xp}}
+        </div> 
+         
+
+        <div style="text-align: center; background: darkgrey;">
+        <h3>Edit Perpersonal Details</h3>
+        <form action="/updateStudentPersonal" method="POST">
+        {{student.role}} Id      :<input type="text" value={{student._id}} name="_id" readonly> <br><br>
+        {{student.role}} Name    :<input type="text" value={{student.username}} name="username"><br><br>
+        {{student.role}} Email Id:<input type="text" value={{student.emailId}} name="emailId"><br><br>
+        Change  Password <br><br>
+        Enter New Password :<input type="password" name="password" value=123456789><br><br>
+        <input type="submit" value="change">
+        </form>
+        </div>
+        <br><br>
+
+
+        <a href="/allCourses/student"> click here to see available Courses</a><br><br>
+
+        
+        <a href="/student/enrolledCourse?_id={{student._id}}"> click here to view enrolled courses
+        </a>
+        <a href="/"> Click Here To Go Back To Home Page</a>
+    </body>
+</html>

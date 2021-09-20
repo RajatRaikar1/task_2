@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        course Id :{{courses._id}} <br><br>
+       {{#each test}}
+       Test Question Id:{{this._id}}<br>
+       Test Question :{{this.question}}<br>
+       {{/each}}
+    <form action="/submit?id=test._id" method="POST">
+    
+        course Id :<input type="text" value="{{courses._id}}" name="_idcourse">
+        Test Id :<input type="text" value="{{test._id}}" name="_idtest">
+        <textarea rows = "5" cols = "60" name = "answer">
+        </textarea><br>
+        <input type="submit">
+    </form>
+        
+    </body>
+</html>

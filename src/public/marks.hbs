@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <div style="background-color: coral; text-align: center;">
+            <h1>Course Answer</h1>
+        {{#each mainCourse}}
+        Course Name:{{this.coursename}}
+        Question:{{this.question}}<br>
+        Answer:{{this.answer}}<br><br>
+        
+        {{/each}}
+        </div>
+        <div style="background-color: darkgoldenrod;text-align:center">
+            <h1>Student Answers</h1>
+            {{#each testStudent}}
+            Question:{{this.question}}<br>
+            Answer:{{this.answer}}<br><br>
+            
+        
+        {{/each}}
+        </div>
+        Student Id:{{student._id}}
+        
+        {{#each studentcourse}}
+        courseId:{{this._id}}<br>
+        course name:{{this.courseName}}
+        {{student._id}}
+        
+        {{/each}}
+
+         <form action="/marksSubmition" method="GET">
+            Student Id: <input type="text" name:"_id"><br>
+            course Id:  <input type="text"  name:"_idCourse"><br>
+            Test Marks: <input type="number" name:"testMarks"><br>
+            Assignment Marks:<input type="number" name:"assignmentMarks"><br><br>
+            <input type="submit">
+        </form> 
+        
+
+    </body>
+</html> 

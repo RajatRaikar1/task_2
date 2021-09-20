@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Update Page</h1>
+        <form action="/update?id={{student._id}}" method="POST">
+            {{!-- Student Id :<input type="text" value="{{update_user._id}}" name="_id"><br><br> --}}
+            Student Name :<input type="text" value="{{student.username}}" name="username"><br><br>
+            Email ID :<input type="text" value="{{student.emailId}}" name="emailId"><br><br>
+            Role :<input type="text" value="{{student.role}}" name="role"><br><br>
+            Password :<input type="password" value="123456789" name="password"><br><br>
+            <input type="submit"><br><br>
+        </form>
+        <a href="/index"> Click Here To Go Back To Home Page</a>
+    </body>
+</html>

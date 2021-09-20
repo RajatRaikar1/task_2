@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Course Update Page</h1>
+        <form action="/updated-course" method="POST">
+            Course Id :<input type="text" value="{{update_course._id}}" name="_id"><br><br>
+            Course Name :<input type="text" value="{{update_course.courseName}}" name="courseName"><br><br>
+            Course duration :<input type="number" value="{{update_course.duration}}" name="duration" min=0><br><br>
+            Course rating :<input type="number" value="{{update_course.rating}}" name="rating" min=0 max=5><br><br>
+            <input type="submit"><br><br>
+        </form>
+        <a href="/index"> Click Here To Go Back To Home Page</a>
+    </body>
+</html>

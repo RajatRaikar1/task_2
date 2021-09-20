@@ -10,14 +10,17 @@
             <div style="text-align: center;" >
             <form action="/register" method="POST">
                 <input type="text" placeholder="Enter Name" name="username" ><br><br>
-                 <input type="text" placeholder="Enter emailId" name="emailId" ><br><br>
+                <input type="text" placeholder="Enter emailId" name="emailId" ><br><br>
                 <input type="password" placeholder="Enter password" name="password" required><br><br>
-                {{!-- <input type="text" placeholder="Enter phone number" name="phoneNumber" pattern="[0-9]{10}" required><br><br>
-                <input type="radio" id="M" name="Gender" value="M">
-                <label for="M">M</label>
-                <input type="radio" id="F" name="Gender" value="F">
-                <label for="F">F</label><br> <br><br> --}}
+                <input type="radio"  name="role" value="admin">
+                <label for="admin">admin</label>
+                <input type="radio" name="role" value="teacher">
+                <label for="treacher">teacher</label>
+                <input type="radio" name="role" value="student">
+                <label for="student">student</label>
                 <input type="submit">
+                <br><br>
+                <a href="/"> Click Here To Go Back To Home Page</a>
             </form>
         </div>
     </body>
